@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shutter Multimedia</title>
+  <meta name="author" content="Daniel Antonio Sánchez Romero" />
+  <meta name="description" content="Servicios Shuttermultimedia " />
+  <meta name="keywords"  content="landing, video, diseño grafico, fotos, videos" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="fullpage/fullpage.min.css">
+  <style>
+    /* Centered texts in each section
+    * --------------------------------------- */
+    .section{
+      text-align:center;
+      overflow: hidden;
+    }
+
+    #myVideo3 {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top:0;
+      width: 100%;
+      height: 100%;
+      background-size: 100% 100%;
+      background-color: black; /* in case the video doesn't fit the whole page*/
+        /*background-image:  our video ;*/
+        background-position: center center;
+        background-size: contain;
+        object-fit: cover; /*cover video background */
+        z-index:3;
+    }
+
+
+
+    /* Layer with position absolute in order to have it over the video
+    * --------------------------------------- */
+    #section1 .layer, #section3 .layer{
+      /* position: absolute; 
+      left: 0;
+      top: 43%; */
+      z-index: 4;
+      width: 100%;
+      height: 100%;
+
+      /*
+      * Preventing flicker on some browsers
+      * See http://stackoverflow.com/a/36671466/1081396  or issue #183
+      */
+      -webkit-transform: translate3d(0,0,0);
+      -ms-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+    }
+
+    /*solves problem with overflowing video in Mac with Chrome */
+    #section0{
+      overflow: hidden;
+    }
+    /* Hiding video controls
+    * See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+    * --------------------------------------- */
+    video::-webkit-media-controls {
+      display:none !important;
+    }
+    .fp-warning, .fp-watermark {
+      display: none;
+    } 
+    #section0 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* #mYVideo2 {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top:0;
+      width: 100%;
+      height: 100%;
+    } */
+    .divido-50 {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+    #section1 .bg-section-full {
+      height: 100%;
+      background-color: rgb(0 0 0);
+      width: 50%;
+      color:  #fff;
+    }
+    h1.titulo-especial {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+
+  </nav>
+  <div id="fullpage">
+      <div class="section " id="section0">
+          <video id="myVideo2" loop muted data-autoplay playsinline>
+              <source src="videos/animacion_logo_shutter_loop.mp4" type="video/mp4">
+          </video>
+          <!-- <div class="layer">
+            <h1>fullPage.js videos</h1>
+            <p>Don't forget to add "playsinline" attribute to make it work on phones</p>
+          </div> -->
+      </div>
+
+      <div class="section" id="section1">
+        <video id="myVideo3" loop muted data-autoplay playsinline>
+          <source src="videos/animaciones_video_intro.mp4" type="video/mp4">
+        </video>
+        <div class="layer">
+          <div class="divido-50">
+            <div>
+              <h1 class="titulo-especial">PRODUCCIÓN MULTIMEDIA</h1>
+            </div>
+            <div class="bg-section-full">
+                <h3>Servicios</h3>
+                <ul>
+                  <li></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="section2">
+        <video id="myVideo2" loop muted data-autoplay playsinline>
+          <source src="videos/animacion_logo_shutter_loop.mp4" type="video/mp4">
+        </video>
+        <!-- <h1>Lovely images <br />for a lovely page</h1> -->
+      </div>
+      <div class="section" id="section3">
+        <video id="myVideo3" loop muted data-autoplay playsinline>
+          <source src="videos/drone_video_intro.mp4" type="video/mp4">
+        </video>
+        <div class="layer">
+
+          <h1 class="titulo-especial">DRON</h1>
+        </div>
+      </div>
+
+  </div>
+<script type="text/javascript" src="fullpage/fullpage.min.js"></script>
+<script type="text/javascript">
+  var myFullpage = new fullpage('#fullpage', {
+      verticalCentered: true,
+      sectionsColor: ['#000000', '#4BBFC3', '#000000']
+  });
+</script>
+</body>
+</html>
