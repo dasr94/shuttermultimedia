@@ -4,19 +4,29 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
 }
-#section1 {
+#section1, #section3 {
   display: flex;
   justify-content: center;
   align-content: center;
   color: #fff;
   padding: 80px;
 }
-#section1 h1 {
+#section1 h1, #section2 h1, #section2 h1 {
   font-size: 3rem;
 }
-#section1 p {
+#section1 p, #section1 ul li {
   font-size: 1.5rem;
 }
-@media screen {
-  
+
+#section2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: black;
+  padding: 80px;
+}
+
+#section3 table tr td, #section3 table tr th {
+  text-align: center;
+  border-bottom: 1px solid white;
 }
